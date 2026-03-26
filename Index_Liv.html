@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Manju AI Assistant</title>
+
+<style>
+
+body{
+font-family: Arial;
+background:#f5f5f5;
+padding:40px;
+}
+
+#chat{
+background:white;
+padding:20px;
+border-radius:10px;
+max-width:700px;
+}
+
+input{
+width:80%;
+padding:10px;
+}
+
+button{
+padding:10px;
+}
+
+.message{
+margin-top:15px;
+}
+
+.user{
+color:blue;
+}
+
+.ai{
+color:green;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Ask Manju's AI Assistant</h2>
+
+<div id="chat"></div>
+
+<br>
+
+<input id="question" placeholder="Ask something about Manju..." />
+<button onclick="ask()">Ask</button>
+
+<script>
+
+async function ask(){
+
+let q = document.getElementById("question").value
+
+let chat = document.getElementById("chat")
+
+chat.innerHTML += `<div class="message user"><b>You:</b> ${q}</div>`
+
+let response = await fetch(
+"https://manju-ai-assistant-server.onrender.com/ask?question=" + encodeURIComponent(q)
+)
+
+let data = await response.json()
+
+chat.innerHTML += `<div class="message ai"><b>AI:</b> ${data.answer}</div>`
+
+}
+
+</script>
+
+</body>
+</html>
