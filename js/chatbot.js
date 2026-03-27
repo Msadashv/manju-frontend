@@ -18,7 +18,11 @@ async function sendMessage(){
 
     input.value = "";
 
+    console.log("Sending question:", message);
+
     let data = await askAPI(message);
+
+    console.log("API response:", data);
 
     chatBody.innerHTML += `<div><b>AI:</b> ${data.answer}</div>`;
 
