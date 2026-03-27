@@ -1,0 +1,263 @@
+  :root {
+    --ink: #1a1e2e;
+    --paper: #ffffff;
+    --gold: #b8893a;
+    --gold-light: #d4a85a;
+    --muted: #7a7a7a;
+    --border: #e8e4dc;
+    --soft: #f8f6f1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--soft);
+    border-bottom: 1px solid var(--border);
+    padding: 40px 60px 32px;
+  }
+  .header-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 40px;
+  }
+  .eyebrow {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 8px;
+  }
+  .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(36px, 4vw, 56px);
+    font-weight: 300;
+    line-height: 1.0;
+    color: var(--ink);
+  }
+  .name em { font-style: italic; color: var(--gold); }
+  .tagline {
+    margin-top: 10px;
+    font-size: 13px;
+    color: var(--muted);
+    max-width: 420px;
+  }
+  .header-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    justify-content: flex-end;
+    max-width: 280px;
+  }
+  .pill {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    font-size: 11px;
+    padding: 4px 11px;
+    border-radius: 20px;
+    color: var(--muted);
+  }
+  .pill.gold { background: var(--gold); color: #fff; border-color: var(--gold); font-weight: 500; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--paper);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-inner {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    padding: 0 60px;
+  }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 13px 16px;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  nav a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+  /* ── MAIN GRID ── */
+  .main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 40px 60px 60px;
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 48px;
+    align-items: start;
+  }
+
+  /* ── LEFT COLUMN ── */
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 14px;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 32px;
+  }
+  .stat {
+    background: var(--paper);
+    padding: 16px 18px;
+    text-align: center;
+  }
+  .stat .n {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .stat .d { font-size: 10px; color: var(--muted); margin-top: 3px; line-height: 1.3; }
+
+  .exp-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+  .exp-card {
+    border: 1px solid var(--border);
+    border-radius: 7px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.2s;
+    background: var(--paper);
+  }
+  .exp-card:hover { border-color: var(--gold); }
+  .exp-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 18px;
+    gap: 12px;
+  }
+  .exp-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+  .exp-co {
+    font-size: 11px;
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  .exp-co span { color: var(--gold); font-weight: 500; }
+  .exp-right { text-align: right; flex-shrink: 0; }
+  .exp-date { font-size: 11px; color: var(--muted); white-space: nowrap; }
+  .toggle-icon {
+    color: var(--gold);
+    font-size: 16px;
+    line-height: 1;
+    margin-top: 4px;
+    transition: transform 0.3s;
+    display: block;
+    text-align: right;
+  }
+  .exp-card.open .toggle-icon { transform: rotate(180deg); }
+  .exp-body { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
+  .exp-card.open .exp-body { max-height: 500px; }
+  .exp-body-inner {
+    padding: 12px 18px 16px;
+    border-top: 1px solid var(--border);
+    background: var(--soft);
+  }
+  .exp-body ul { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+  .exp-body li {
+    font-size: 12.5px;
+    color: #444;
+    padding-left: 14px;
+    position: relative;
+    line-height: 1.55;
+  }
+  .exp-body li::before { content: '–'; position: absolute; left: 0; color: var(--gold); }
+  .badges { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .badge {
+    background: var(--ink);
+    color: #d4a85a;
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  /* ── RIGHT COLUMN ── */
+  .right-col { display: flex; flex-direction: column; gap: 20px; }
+
+  .skill-block {
+    background: var(--soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 20px;
+  }
+  .skill-block h4 {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 11px;
+  }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tag {
+    background: var(--paper);
+    border: 1px solid var(--border);
+    font-size: 11px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    color: var(--ink);
+    transition: all 0.15s;
+  }
+  .tag:hover { background: var(--gold); color: #fff; border-color: var(--gold); }
+
+  .edu-block {
+    background: var(--ink);
+    border-radius: 8px;
+    padding: 20px;
+    color: var(--paper);
+  }
+  .edu-block h4 {
+    font-size: 9px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .edu-deg {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: #fff;
+    line-height: 1.2;
+  }
+  .edu-school { font-size: 11px; color: rgba(255,255,255,0.45); margin-top: 5px; }
+  .edu-note { font-size: 11px; color: rgba(255,255,255,0.28); margin-top: 8px; }

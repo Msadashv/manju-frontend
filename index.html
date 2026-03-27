@@ -1,50 +1,105 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>Manjunath | Product Owner - Payments & Banking</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manjunath — Agile Leader & Product Owner</title>
+    
+  <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- site Styles -->   
+     <link rel="stylesheet" href="css/site_Theme.css">
+  <!-- chatbot Styles -->   
+     <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
 
-<h1>Manjunath Sadashivaiah</h1>
 
-<p>
-Product Owner with 7+ years of experience delivering digital products in regulated environments,
-specializing in banking, payments, and enterprise platforms.
-</p>
+<header>
+  <div class="header-inner">
+    <div>
+      <div class="eyebrow">Agile Leader · Product Owner</div>
+      <h1 class="name">Manju<em>nath</em></h1>
+      <p class="tagline">7+ years scaling products, aligning stakeholders, and delivering measurable impact in Financial Services &amp; Banking.</p>
+    </div>
+    <div class="header-pills">
+      <span class="pill gold">SAFe Certified</span>
+      <span class="pill gold">Certified PO</span>
+      <span class="pill">Financial Services</span>
+      <span class="pill">Scrum · Kanban</span>
+      <span class="pill">JIRA · Confluence</span>
+      <span class="pill">M.Eng · Western University</span>
+    </div>
+  </div>
+</header>
 
-<h2>What I Do</h2>
-<ul>
-<li>Define user problems using data & research</li>
-<li>Build and validate MVPs through iterative delivery</li>
-<li>Drive measurable product outcomes using KPIs</li>
-<li>Lead cross-functional Agile teams</li>
-</ul>
+<nav>
+  <div class="nav-inner">
+    <a href="#main">Experience</a>
+    <a href="#chat">Ask Manju</a>
+  </div>
+</nav>
 
-<h2>Key Experience</h2>
+<div class="main" id="main">
 
-<h3>Bosch – Product Owner (Lead)</h3>
-<ul>
-<li>Owned enterprise simulation platform used by 500+ engineers</li>
-<li>Reduced release cycle time by ~15%</li>
-<li>Improved adoption through UI redesign & usability improvements</li>
-<li>Defined OKRs and drove product strategy</li>
-</ul>
+  <!-- LEFT -->
+  <div>
+    <div class="section-label">Impact at a Glance</div>
+    <div class="stats-row">
+      <div class="stat"><div class="n">7+</div><div class="d">Years Agile Leadership</div></div>
+      <div class="stat"><div class="n">30%</div><div class="d">Testing Cost Reduction</div></div>
+      <div class="stat"><div class="n">50%</div><div class="d">Platform Stability Boost</div></div>
+      <div class="stat"><div class="n">32%</div><div class="d">CSAT Improvement</div></div>
+      <div class="stat"><div class="n">8×</div><div class="d">Products Scaled</div></div>
+      <div class="stat"><div class="n">99.9%</div><div class="d">Application Uptime</div></div>
+    </div>
+</div>
 
-<h3>Infosys – Scrum Master (Lead)</h3>
-<ul>
-<li>Delivered banking applications with 95% on-time rate</li>
-<li>Defined KPIs (activation, adoption, engagement)</li>
-<li>Improved sprint predictability and stakeholder alignment</li>
-</ul>
+<div id="container"></div>
+<script>
+fetch('Prof_summ.html')
+  .then(res => {
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    return res.text();
+  })
+  .then(html => {
+    document.getElementById('container').innerHTML = html;
+  })
+  .catch(err => {
+    console.error('Failed to load Prof_summ.html', err);
+    document.getElementById('container').innerHTML = '<p>Unable to load content.</p>';
+  });
+</script>
 
-<h2>Skills</h2>
-<p>
-Agile • Product Strategy • Payment Systems • Banking APIs • KPI Design • 
-User Research • Experimentation • SAFe • JIRA • Confluence
-</p>
+  <!-- RIGHT -->
+  <div class="right-col" id="chat">
+
+    <div class="skill-block">
+      <h4>Frameworks &amp; Methods</h4>
+      <div class="tags">
+        <span class="tag">SAFe</span><span class="tag">Scrum</span><span class="tag">Kanban</span>
+        <span class="tag">OKRs</span><span class="tag">Design Thinking</span><span class="tag">CI/CD</span>
+      </div>
+    </div>
+
+    <div class="skill-block">
+      <h4>Tools</h4>
+      <div class="tags">
+        <span class="tag">JIRA</span><span class="tag">Confluence</span><span class="tag">Miro</span>
+        <span class="tag">Figma</span><span class="tag">Mural</span><span class="tag">DevOps</span>
+      </div>
+    </div>
+
+    <div class="edu-block">
+      <h4>Education</h4>
+      <div class="edu-deg">Master of Engineering</div>
+      <div class="edu-school">University of Western Ontario · Canada · 2017</div>
+      <div class="edu-note">Published research in biomedical device design</div>
+    </div>
+
+<footer>© 2025 Manjunath · Agile Leader &amp; Product Owner · <span>♦</span></footer>
+
 
 <!-- CHATBOT -->
 <div id="chatbot-button" onclick="toggleChat()">💬</div>
@@ -64,6 +119,12 @@ User Research • Experimentation • SAFe • JIRA • Confluence
     </div>
 
 </div>
+
+<script>
+  function toggleCard(element) {
+    element.classList.toggle('open');
+  }
+</script>
 
 <script src="js/api.js"></script>
 <script src="js/chatbot.js"></script>
