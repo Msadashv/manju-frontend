@@ -2,27 +2,56 @@
 <html>
 
 <head>
-
-<title>Manju AI Assistant</title>
-
-<link rel="stylesheet" href="css/style.css">
-
+    <title>Manju | AI Product Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<h2>Ask Manju's AI Assistant</h2>
+<h1>Manju - Product Owner (Payments & Banking)</h1>
 
-<div id="chat"></div>
+<p>
+Experienced Product Owner specializing in digital banking, payment infrastructure,
+and API-driven financial systems.
+</p>
 
-<br>
+<h3>Key Expertise</h3>
+<ul>
+<li>Payment systems (ACH, Fedwire, eTransfer)</li>
+<li>Banking APIs & integrations</li>
+<li>Agile product delivery</li>
+<li>CRM modernization</li>
+</ul>
 
-<input id="question" placeholder="Ask something about Manju...">
+<h3>Projects</h3>
+<ul>
+<li>CRM transformation for onboarding</li>
+<li>Payment platform integrations</li>
+<li>Banking API ecosystem design</li>
+</ul>
 
-<button onclick="ask()">Ask</button>
+<!-- Chat Button -->
+<div id="chatbot-button" onclick="toggleChat()">💬</div>
 
-<script src="js/chat.js"></script>
+<!-- Chat Window -->
+<div id="chatbot-container">
+
+    <div id="chat-header">
+        Ask Me Anything
+        <span onclick="toggleChat()">✖</span>
+    </div>
+
+    <div id="chat-body"></div>
+
+    <div id="chat-input-area">
+        <input id="chat-input" placeholder="Ask about Manju..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/chatbot.js"></script>
 
 </body>
-
 </html>
